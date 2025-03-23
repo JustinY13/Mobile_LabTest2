@@ -39,7 +39,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
     
     func showProduct() {
-        guard products.count > 0 else {
+        guard productsBySearch.count > 0 else {
             productName.text = "Failed to Fetch Product"
             productDescription.text = ""
             productPrice.text = ""
@@ -48,18 +48,18 @@ class ViewController: UIViewController, UISearchBarDelegate {
             nextButton.isEnabled = false
             return
         }
-        let product = products[mainIndex]
+        let product = productsBySearch[mainIndex]
         productName.text = product.productName
         productDescription.text = product.productDescription
         productPrice.text = String(product.productPrice)
         productProvider.text = product.productProvider
         
         previousButton.isEnabled = mainIndex > 0
-        nextButton.isEnabled = mainIndex < products.count - 1
+        nextButton.isEnabled = mainIndex < productsBySearch.count - 1
     }
     
     @IBAction func nextProduct(_ sender: UIButton) {
-        if mainIndex < products.count - 1 {
+        if mainIndex < productsBySearch.count - 1 {
             mainIndex = mainIndex + 1
             showProduct()
         }
@@ -70,6 +70,24 @@ class ViewController: UIViewController, UISearchBarDelegate {
             mainIndex = mainIndex - 1
             showProduct()
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            productsBySearch = products
+        } else {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let getRequest: NSFetchRequest<Product> = Product.fetchRequest()
+            
+            getRequest.predicate = NSPredicate(format: "productName CONTAINS[c] %@ OR productDescription CONTAINS[c] %@", searchText, searchText)
+            do {
+                productsBySearch = try context.fetch(getRequest)
+            } catch {
+                print("Search Result Failed: \(error)")
+            }
+        }
+        mainIndex = 0
+        showProduct()
     }
     
 }
