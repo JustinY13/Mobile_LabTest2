@@ -1,11 +1,8 @@
-//
-//  ViewController.swift
-//  A2_iOS_Justin_101400171
-//
-//  Created by Justin Yeh on 2025-03-23.
-//
+// Justin Yeh
+// 101400171
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
