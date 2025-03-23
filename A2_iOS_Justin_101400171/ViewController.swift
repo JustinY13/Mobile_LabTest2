@@ -39,7 +39,15 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
     
     func showProduct() {
-        guard products.count > 0 else { return }
+        guard products.count > 0 else {
+            productName.text = "Failed to Fetch Product"
+            productDescription.text = ""
+            productPrice.text = ""
+            productProvider.text = ""
+            previousButton.isEnabled = false
+            nextButton.isEnabled = false
+            return
+        }
         let product = products[mainIndex]
         productName.text = product.productName
         productDescription.text = product.productDescription
