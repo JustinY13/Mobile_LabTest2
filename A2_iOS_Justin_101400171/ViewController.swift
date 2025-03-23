@@ -4,8 +4,9 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productDescription: UILabel!
     @IBOutlet weak var productPrice: UILabel!
@@ -14,7 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     
     var products: [Product] = []
+    var productsBySearch: [Product] = []
     var mainIndex = 0
+    var isSearching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
