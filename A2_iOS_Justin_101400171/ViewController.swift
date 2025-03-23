@@ -21,6 +21,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         getProducts()
         showProduct()
     }
@@ -31,6 +32,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         
         do {
             products = try context.fetch(getRequest)
+            productsBySearch = products
         } catch {
             print("Fetching products failed: \(error)")
         }
