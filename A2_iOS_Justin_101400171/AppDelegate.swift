@@ -11,7 +11,7 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -44,23 +44,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let container = NSPersistentContainer(name: "A2_iOS_Justin_101400171")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         return container
     }()
-
+    
+    func preloadData() {
+        let context = persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Product> = Product.fetchRequest()
+        do {
+            let count = try context.count(for: fetchRequest)
+            if count == 0 {
+                let products = [
+                    (1, "Xbox Series S", "Fourth Generation Xbox", 399.99, "Microsoft"),
+                    (2, "Playstation 5", "Sony's latest video game console", 199.99, "Sony"),
+                    (3, "Nintendo Switch", "Newest Gaming Console", 650.00, "Nintendo"),
+                    (4, "Asus Vivobook", "School Laptop", 445.50, "Asus"),
+                    (5, "MacBook Pro", "Great-level Laptop", 500.00, "Apple"),
+                    (6, "Samsung Galaxy", "New Samsung Tablet", 750.00, "Samsung"),
+                    (7, "Sony Walkman", "Great for listening music", 865.00, "Sony"),
+                    (8, "iPhone 16", "Latest iPhone", 250.00, "Apple"),
+                    (9, "Street Fighter 6", "New Game Developed on RE Engine", 650.00, "Capcom"),
+                    (10, "Panasonic Television", "New TV with great graphics", 400.00, "Panasonic")
+                ]
+                
+                for product in products {
+                    let newProduct = Product(context: context)
+                    newProduct.productId = Int32(product.0)
+                    newProduct.productName = product.1
+                    newProduct.productDescription = product.2
+                    newProduct.productPrice = product.3
+                    newProduct.productProvider = product.4
+                }
+                try context.save()
+            }
+        } catch {
+            print("Error preloading products: \(error)")
+        }
+    }
+    
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        preloadData()
+        return true
+    }
     // MARK: - Core Data Saving support
 
     func saveContext () {
