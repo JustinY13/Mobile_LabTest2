@@ -22,6 +22,7 @@ class AddNewProduct: UIViewController {
 
     @IBOutlet var textFields: [UITextField]!
     
+    // Created Array for all products
     var products: [Product]?
     override func viewDidLoad() {
         super.viewDidLoad()

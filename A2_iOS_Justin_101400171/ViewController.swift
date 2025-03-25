@@ -15,6 +15,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    // Created Arrays for all products and the products that user searched on
     var products: [Product] = []
     var productsBySearch: [Product] = []
     var mainIndex = 0
@@ -27,6 +28,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         showProduct()
     }
     
+    // Gets all products from the database
     func getProducts() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let getRequest: NSFetchRequest<Product> = Product.fetchRequest()
