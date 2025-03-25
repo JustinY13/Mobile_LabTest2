@@ -20,6 +20,7 @@ import CoreData
 
 class AddNewProduct: UIViewController {
 
+    // Created Outlet connection arrays for product name, product description, product price and product provider
     @IBOutlet var textFields: [UITextField]!
     
     // Created Array for all products
