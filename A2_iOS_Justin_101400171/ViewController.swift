@@ -39,6 +39,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
+    // If the product does not exist then the message will say "Failed To Fetch Product"
     func showProduct() {
         guard productsBySearch.count > 0 else {
             productName.text = "Failed to Fetch Product"
