@@ -36,7 +36,7 @@ class ProductTableViewController: UITableViewController {
         if let products = products {
             let product = products[indexPath.row]
             cell.textLabel?.text = product.productName ?? "no product name"
-            cell.textLabel?.text = product.productDescription ?? "no product description"
+            cell.detailTextLabel?.text = product.productDescription ?? "no product description"
         }
         return cell
     }

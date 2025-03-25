@@ -42,7 +42,7 @@ class AddNewProduct: UIViewController {
         }
     }
     
-    
+    // Function for Adding Product to the database
     @IBAction func addProduct(_ sender: UIButton) {
         let productName = textFields[0].text ?? ""
         let productDescription = textFields[1].text ?? ""
