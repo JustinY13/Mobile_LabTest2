@@ -17,6 +17,8 @@
 		68007F5E2D90544A0014B8C2 /* A2_iOS_Justin_101400171Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68007F5D2D90544A0014B8C2 /* A2_iOS_Justin_101400171Tests.swift */; };
 		68007F682D90544A0014B8C2 /* A2_iOS_Justin_101400171UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68007F672D90544A0014B8C2 /* A2_iOS_Justin_101400171UITests.swift */; };
 		68007F6A2D90544A0014B8C2 /* A2_iOS_Justin_101400171UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68007F692D90544A0014B8C2 /* A2_iOS_Justin_101400171UITestsLaunchTests.swift */; };
+		6864011B2D923EEB00C32826 /* AddNewProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6864011A2D923EEB00C32826 /* AddNewProduct.swift */; };
+		6867CBE42D92479700AB3297 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6867CBE32D92479700AB3297 /* ProductTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		68007F632D90544A0014B8C2 /* A2_iOS_Justin_101400171UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = A2_iOS_Justin_101400171UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68007F672D90544A0014B8C2 /* A2_iOS_Justin_101400171UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A2_iOS_Justin_101400171UITests.swift; sourceTree = "<group>"; };
 		68007F692D90544A0014B8C2 /* A2_iOS_Justin_101400171UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A2_iOS_Justin_101400171UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6864011A2D923EEB00C32826 /* AddNewProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewProduct.swift; sourceTree = "<group>"; };
+		6867CBE32D92479700AB3297 /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		68007F422D9054490014B8C2 /* A2_iOS_Justin_101400171 */ = {
 			isa = PBXGroup;
 			children = (
+				6867CBE32D92479700AB3297 /* ProductTableViewController.swift */,
 				68007F432D9054490014B8C2 /* AppDelegate.swift */,
 				68007F452D9054490014B8C2 /* SceneDelegate.swift */,
 				68007F472D9054490014B8C2 /* ViewController.swift */,
@@ -109,6 +114,7 @@
 				68007F512D90544A0014B8C2 /* LaunchScreen.storyboard */,
 				68007F542D90544A0014B8C2 /* Info.plist */,
 				68007F4C2D9054490014B8C2 /* A2_iOS_Justin_101400171.xcdatamodeld */,
+				6864011A2D923EEB00C32826 /* AddNewProduct.swift */,
 			);
 			path = A2_iOS_Justin_101400171;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 				68007F442D9054490014B8C2 /* AppDelegate.swift in Sources */,
 				68007F462D9054490014B8C2 /* SceneDelegate.swift in Sources */,
 				68007F4E2D9054490014B8C2 /* A2_iOS_Justin_101400171.xcdatamodeld in Sources */,
+				6867CBE42D92479700AB3297 /* ProductTableViewController.swift in Sources */,
+				6864011B2D923EEB00C32826 /* AddNewProduct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

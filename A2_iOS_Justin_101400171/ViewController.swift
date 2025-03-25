@@ -6,6 +6,7 @@ import CoreData
 
 class ViewController: UIViewController, UISearchBarDelegate {
 
+    // Defined outlets for main page
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productDescription: UILabel!
@@ -88,6 +89,11 @@ class ViewController: UIViewController, UISearchBarDelegate {
         }
         mainIndex = 0
         showProduct()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let productTable = segue.destination as? ProductTableViewController
+        productTable?.products = products
     }
     
 }
