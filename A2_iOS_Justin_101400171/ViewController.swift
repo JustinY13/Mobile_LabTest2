@@ -73,7 +73,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
-    
+    // Added a search bar for the user to search on the product
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             productsBySearch = products
@@ -92,11 +92,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
         showProduct()
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let productTable = segue.destination as? ProductTableViewController
         productTable?.products = products
     }
     
+    // Called function to update main and list pages with new item added
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getProducts()
