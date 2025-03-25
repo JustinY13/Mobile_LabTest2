@@ -62,6 +62,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         nextButton.isEnabled = mainIndex < productsBySearch.count - 1
     }
     
+    // Moves to the next product from the database
     @IBAction func nextProduct(_ sender: UIButton) {
         if mainIndex < productsBySearch.count - 1 {
             mainIndex = mainIndex + 1
@@ -69,6 +70,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
+    // Moves to the previous product from the database
     @IBAction func previousProduct(_ sender: UIButton) {
         if mainIndex > 0 {
             mainIndex = mainIndex - 1

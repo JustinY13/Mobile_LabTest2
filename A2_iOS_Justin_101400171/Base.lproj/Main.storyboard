@@ -150,7 +150,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaF-PS-TZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2008" y="91"/>
+            <point key="canvasLocation" x="-1749" y="96"/>
         </scene>
         <!--Add New Product-->
         <scene sceneID="Ns8-XA-5v1">
