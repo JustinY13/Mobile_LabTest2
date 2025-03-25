@@ -29,6 +29,7 @@ class AddNewProduct: UIViewController {
         getData()
     }
     
+    // Function for fetching data from the database
     func getData() {
         products = [Product]()
         
