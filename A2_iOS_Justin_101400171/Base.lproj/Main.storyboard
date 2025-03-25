@@ -105,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2369" y="-15"/>
+            <point key="canvasLocation" x="-2654" y="-11"/>
         </scene>
         <!--Product Table View Controller-->
         <scene sceneID="jGD-2k-DRY">
@@ -150,12 +150,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaF-PS-TZ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1665" y="5"/>
+            <point key="canvasLocation" x="-2008" y="91"/>
         </scene>
-        <!--Preview Controller-->
+        <!--Add New Product-->
         <scene sceneID="Ns8-XA-5v1">
             <objects>
-                <viewController id="x54-pE-FUp" customClass="QLPreviewController" sceneMemberID="viewController">
+                <viewController id="x54-pE-FUp" customClass="AddNewProduct" customModule="A2_iOS_Justin_101400171" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9bj-1y-wLc" customClass="ARSKView">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,6 +225,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Product"/>
                                 <connections>
+                                    <action selector="addProduct:" destination="x54-pE-FUp" eventType="touchUpInside" id="4aZ-SE-XSk"/>
                                     <action selector="addProduct:" destination="B96-Hg-HFh" eventType="touchUpInside" id="N0g-my-SYN"/>
                                 </connections>
                             </button>
@@ -239,11 +240,17 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="hvc-my-qZe"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outletCollection property="textFields" destination="oST-xc-HDd" collectionClass="NSMutableArray" id="QoD-gF-Cb1"/>
+                        <outletCollection property="textFields" destination="OVb-jv-5Bi" collectionClass="NSMutableArray" id="maz-5r-pGa"/>
+                        <outletCollection property="textFields" destination="6t3-mv-GBW" collectionClass="NSMutableArray" id="cg4-Jg-Zp5"/>
+                        <outletCollection property="textFields" destination="NaQ-Sn-8kr" collectionClass="NSMutableArray" id="3Ft-aj-c9F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wPN-k1-Nhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="B96-Hg-HFh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-824" y="-35"/>
+            <point key="canvasLocation" x="-888" y="-11"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Goa-sp-2vj">

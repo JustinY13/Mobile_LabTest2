@@ -73,6 +73,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         }
     }
     
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             productsBySearch = products
@@ -96,5 +97,10 @@ class ViewController: UIViewController, UISearchBarDelegate {
         productTable?.products = products
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getProducts()
+        showProduct()
+    }
 }
 
